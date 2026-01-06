@@ -19,7 +19,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * Routet Sub-Endpoints an RatingController, CommentController und FavoritesController
  * Trennung der Verantwortlichkeiten: MediaController routet, spezialisierte Controller verarbeiten
  * 
- * Verwendet Repository Pattern für Datenbankzugriffe (Dependency Inversion Principle)
  */
 public class MediaController {
     private final MediaRepository repo;  // Interface, nicht konkrete Implementierung
@@ -38,7 +37,7 @@ public class MediaController {
         server.createContext("/api/recommendations", this::handleRecommendations);
     }
 
-    // Dependency Injection: Controller werden nachträglich gesetzt (circular dependency vermeiden)
+    // Controller werden nachträglich gesetzt (verhindert Zirkelabhängigkeiten)
     public void setRatingController(RatingController ratingController) {
         this.ratingController = ratingController;
     }

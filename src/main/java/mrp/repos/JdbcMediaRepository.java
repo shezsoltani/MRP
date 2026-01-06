@@ -242,7 +242,7 @@ public class JdbcMediaRepository implements MediaRepository {
         }
     }
 
-    // Helper-Methode: Mappt ResultSet-Zeile zu MediaEntry-Objekt (DRY-Prinzip)
+    // Helper-Methode: Mappt ResultSet-Zeile zu MediaEntry-Objekt
     private MediaEntry mapMediaEntry(ResultSet rs) throws SQLException {
         return new MediaEntry(
                 rs.getInt("id"),

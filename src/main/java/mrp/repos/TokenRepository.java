@@ -6,7 +6,6 @@ import java.util.Optional;
 /**
  * Repository Interface für Token-Operationen
  * 
- * Abstrahiert Datenbankzugriffe und unterstützt das Dependency Inversion Principle (DIP)
  * Token haben eine Ablaufzeit (7 Tage) und werden für die Authentifizierung verwendet
  */
 public interface TokenRepository {

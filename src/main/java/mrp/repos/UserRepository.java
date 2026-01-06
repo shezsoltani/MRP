@@ -6,8 +6,8 @@ import java.util.Optional;
 /**
  * Repository Interface für User-Operationen
  * 
- * Abstrahiert Datenbankzugriffe und unterstützt das Dependency Inversion Principle (DIP)
- * Passwörter werden als Hash gespeichert (bcrypt), nie als Klartext
+ * Abstrahiert Datenbankzugriffe
+ * Passwörter werden als Hash gespeichert, nie als Klartext
  */
 public interface UserRepository {
     // Erstellt einen neuen User und gibt die generierte User-ID zurück

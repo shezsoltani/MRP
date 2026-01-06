@@ -9,8 +9,6 @@ import java.util.Optional;
 
 /**
  * Repository Interface für Media-Operationen
- * 
- * Abstrahiert Datenbankzugriffe und unterstützt das Dependency Inversion Principle (DIP)
  */
 public interface MediaRepository {
     MediaEntry create(String title, int rating, int userId) throws SQLException;

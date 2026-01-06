@@ -15,7 +15,6 @@ import java.util.Optional;
  * 
  * Wird von MediaController für /api/media/{id}/rate und /api/media/{id}/average-rating geroutet
  * 
- * Verwendet Repository Pattern für Datenbankzugriffe (Dependency Inversion Principle)
  */
 public class RatingController {
     private final RatingRepository ratingRepo;  // Interface, nicht konkrete Implementierung

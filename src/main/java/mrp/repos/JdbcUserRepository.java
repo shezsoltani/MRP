@@ -7,7 +7,7 @@ import java.util.Optional;
  * JDBC-Implementierung des UserRepository Interfaces
  * 
  * Verwendet PreparedStatements für SQL-Injection-Schutz
- * Passwörter werden als Hash gespeichert (bcrypt), nie als Klartext
+ * Passwörter werden als Hash gespeichert, nie als Klartext
  */
 public class JdbcUserRepository implements UserRepository {
     
@@ -62,7 +62,7 @@ public class JdbcUserRepository implements UserRepository {
         }
     }
 
-    // Helper-Methode: Mappt ResultSet-Zeile zu UserRow-Objekt (DRY-Prinzip)
+    // Helper-Methode: Mappt ResultSet-Zeile zu UserRow-Objekt
     private UserRepository.UserRow mapUserRow(ResultSet rs) throws SQLException {
         return new UserRepository.UserRow(
                 rs.getInt(1),

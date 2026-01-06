@@ -16,7 +16,6 @@ import java.util.Optional;
  * Implementiert Moderation: Neue Kommentare sind standardmäßig nicht approved
  * und werden erst nach Freigabe (POST /api/comments/{id}/approve) öffentlich sichtbar
  * 
- * Verwendet Repository Pattern für Datenbankzugriffe (Dependency Inversion Principle)
  */
 public class CommentController {
     private final CommentRepository commentRepo;  // Interface, nicht konkrete Implementierung

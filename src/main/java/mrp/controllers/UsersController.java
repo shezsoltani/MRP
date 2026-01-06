@@ -16,8 +16,7 @@ import java.sql.SQLException;
 /**
  * Controller für User-Operationen
  * 
- * Verwendet Repository Pattern für Datenbankzugriffe (Dependency Inversion Principle)
- * Nutzt AuthService für Authentifizierung und Passwort-Hashing
+ * Nutzt AuthService für Authentifizierung
  */
 public class UsersController {
     private final AuthService auth;
@@ -65,7 +64,7 @@ public class UsersController {
                 // SQL-Fehler bei Prüfung → weiter mit Erstellung
             }
             
-            // Passwort wird gehasht (bcrypt) bevor es gespeichert wird
+            // Passwort wird gehasht bevor es gespeichert wird
             try {
                 int userId = users.create(req.username(), mrp.services.HashService.hash(req.password()));
                 var response = String.format("{\"id\":%d,\"username\":\"%s\",\"status\":\"created\"}", userId, req.username());

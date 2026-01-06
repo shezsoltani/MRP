@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Interface für Favorites-Operationen (Repository Pattern)
+ * Interface für Favorites-Operationen
  */
 public interface FavoritesRepository {
 

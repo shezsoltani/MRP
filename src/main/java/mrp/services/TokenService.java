@@ -6,9 +6,6 @@ import java.util.UUID;
 
 /**
  * Service für Token-Verwaltung
- * 
- * Nutzt Dependency Injection (Constructor Injection) für TokenRepository
- * Unterstützt das Dependency Inversion Principle (DIP)
  */
 public class TokenService {
     private final TokenRepository repo;

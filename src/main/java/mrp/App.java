@@ -28,7 +28,6 @@ import mrp.controllers.FavoritesController;
  * Hauptklasse der Anwendung
  * 
  * Setzt den HTTP-Server auf und konfiguriert alle Controller, Repositories und Services
- * Verwendet Dependency Injection für lose Kopplung zwischen Komponenten
  */
 public class App {
     public static void main(String[] args) throws Exception {
@@ -66,7 +65,7 @@ public class App {
             }
         });
 
-        // Dependency Injection: Repositories (Interfaces, nicht konkrete Implementierungen - DIP)
+        // Repositories initialisieren
         UserRepository userRepo = new JdbcUserRepository();
         TokenRepository tokenRepo = new JdbcTokenRepository();
         MediaRepository mediaRepo = new JdbcMediaRepository();
@@ -74,19 +73,18 @@ public class App {
         CommentRepository commentRepo = new JdbcCommentRepository();
         FavoritesRepository favoritesRepo = new JdbcFavoritesRepository();
         
-        // Services mit Constructor Injection
+        // Services initialisieren
         var tokenService = new TokenService(tokenRepo);
         var authService = new AuthService(userRepo, tokenService);
         
-        // Controller mit Constructor Injection
+        // Controller initialisieren
         var ratingController = new RatingController(server, ratingRepo, tokenService);
         var commentController = new CommentController(server, commentRepo, tokenService);
         var favoritesController = new FavoritesController(server, favoritesRepo, tokenService);
         var mediaController = new MediaController(server, mediaRepo, tokenService);
         new UsersController(server, authService, userRepo, ratingRepo, favoritesRepo, mediaRepo);
         
-        // Setter Injection: MediaController routet Sub-Endpoints an andere Controller
-        // Verhindert Zirkelabhängigkeiten (MediaController braucht andere Controller, aber nicht umgekehrt)
+        // MediaController braucht andere Controller für Sub-Endpoints
         mediaController.setRatingController(ratingController);
         mediaController.setCommentController(commentController);
         mediaController.setFavoritesController(favoritesController);

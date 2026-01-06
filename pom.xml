@@ -30,12 +30,6 @@
             <version>42.7.7</version>
         </dependency>
 
-        <!-- Passwort-Hashing mit bcrypt (Sicherheit) -->
-        <dependency>
-            <groupId>org.mindrot</groupId>
-            <artifactId>jbcrypt</artifactId>
-            <version>0.4</version>
-        </dependency>
 
         <!-- JUnit 5 für Unit-Tests -->
         <dependency>

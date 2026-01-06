@@ -4,9 +4,6 @@ import mrp.repos.UserRepository;
 
 /**
  * Service für Authentifizierung
- * 
- * Nutzt Dependency Injection (Constructor Injection) für UserRepository und TokenService
- * Unterstützt das Dependency Inversion Principle (DIP)
  */
 public class AuthService {
     private final UserRepository users;
@@ -17,7 +14,7 @@ public class AuthService {
         this.tokens = tokens; 
     }
 
-    // Registrierung: Validiert Input, prüft auf Duplikate und speichert Passwort als Hash (bcrypt)
+    // Registrierung: Validiert Input, prüft auf Duplikate und speichert Passwort als Hash
     public void register(String username, String password) throws Exception {
         if (username == null || username.isBlank()) throw new IllegalArgumentException("username required");
         if (password == null || password.length() < 4) throw new IllegalArgumentException("password too short");

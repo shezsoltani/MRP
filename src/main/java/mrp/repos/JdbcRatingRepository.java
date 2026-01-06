@@ -179,7 +179,7 @@ public class JdbcRatingRepository implements RatingRepository {
         return ratings;
     }
 
-    // Helper-Methode: Mappt ResultSet-Zeile zu RatingRow-Objekt (DRY-Prinzip)
+    // Helper-Methode: Mappt ResultSet-Zeile zu RatingRow-Objekt
     private RatingRepository.RatingRow mapRatingRow(ResultSet rs) throws SQLException {
         return new RatingRepository.RatingRow(
                 rs.getInt("id"),

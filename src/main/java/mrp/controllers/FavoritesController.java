@@ -15,7 +15,6 @@ import java.util.Optional;
  * Wird von MediaController für /api/media/{id}/favorite geroutet
  * Trennung der Verantwortlichkeiten: MediaController routet, FavoritesController verarbeitet
  * 
- * Verwendet Repository Pattern für Datenbankzugriffe (Dependency Inversion Principle)
  */
 public class FavoritesController {
     private final FavoritesRepository favoritesRepo;  // Interface, nicht konkrete Implementierung

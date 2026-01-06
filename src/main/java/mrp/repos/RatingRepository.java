@@ -4,9 +4,7 @@ import java.sql.SQLException;
 import java.util.Optional;
 
 /**
- * Interface für Rating-Operationen (Repository Pattern)
- * 
- * Abstrahiert Datenbankzugriffe und unterstützt das Dependency Inversion Principle (DIP)
+ * Interface für Rating-Operationen
  * 1 Rating pro User/Media (1-5 Sterne), idempotente Operationen
  */
 public interface RatingRepository {
